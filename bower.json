@@ -3,7 +3,8 @@
   "description": "Element to facilitate the editing of products on the Ordercloud platform",
   "main": "oc-product-edit.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "paper-tabs": "PolymerElements/paper-tabs#^1.6.2"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

@@ -1,7 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
-<link rel="import" href="../paper-tabs/paper-tab.html">
-<link rel="import" href="../paper-tabs/paper-tab.html">
 <link rel="import" href="../iron-pages/iron-pages.html">
 
 <!--
@@ -18,12 +16,13 @@ Element to facilitate the editing of products on the Ordercloud platform
         display: block;
       }
 
-      --paper-tabs-selection-bar-color {
-        color: #4285f4;
+      paper-tabs {
+        background-color: var(--primary-color);
+        --paper-tabs-selection-bar-color: #fff;
       }
-
-      --paper-tabs-selection-bar {
-        background-color: #4285f4;
+      paper-tab {
+        color: #fff;
+        --paper-tab-ink: #fff;
       }
 
       section {
@@ -42,12 +41,24 @@ Element to facilitate the editing of products on the Ordercloud platform
     </paper-tabs>
 
     <iron-pages selected="{{selected}}" attr-for-selected="key">
-      <section key="product">Product</section>
-      <section key="options">Options</section>
-      <section key="extras">Extras</section>
-      <section key="attributes">Attributes</section>
-      <section key="tags">Tags</section>
-      <section key="images">Images</section>
+      <section key="product">
+        <content select="#product"></content>
+      </section>
+      <section key="options">
+        <content select="#options"></content>
+      </section>
+      <section key="extras">
+        <content select="#extras"></content>
+      </section>
+      <section key="attributes">
+        <content select="#attributes"></content>
+      </section>
+      <section key="tags">
+        <content select="#tags"></content>
+      </section>
+      <section key="images">
+        <content select="#images"></content>
+      </section>
     </iron-pages>
 
   </template>

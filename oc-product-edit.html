@@ -1,10 +1,14 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../paper-tabs/paper-tab.html">
+<link rel="import" href="../paper-tabs/paper-tab.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
 
 <!--
 `oc-product-edit`
 Element to facilitate the editing of products on the Ordercloud platform
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="oc-product-edit">
@@ -13,8 +17,39 @@ Element to facilitate the editing of products on the Ordercloud platform
       :host {
         display: block;
       }
+
+      --paper-tabs-selection-bar-color {
+        color: #4285f4;
+      }
+
+      --paper-tabs-selection-bar {
+        background-color: #4285f4;
+      }
+
+      section {
+        width : 100%;
+        margin: 10px;
+      }
     </style>
-    <h2>Hello [[prop1]]</h2>
+
+    <paper-tabs selected="{{selected}}" attr-for-selected="key">
+      <paper-tab key="product">Product</paper-tab>
+      <paper-tab key="options">Options</paper-tab>
+      <paper-tab key="extras">Extras</paper-tab>
+      <paper-tab key="attributes">Attributes</paper-tab>
+      <paper-tab key="tags">Tags</paper-tab>
+      <paper-tab key="images">Images</paper-tab>
+    </paper-tabs>
+
+    <iron-pages selected="{{selected}}" attr-for-selected="key">
+      <section key="product">Product</section>
+      <section key="options">Options</section>
+      <section key="extras">Extras</section>
+      <section key="attributes">Attributes</section>
+      <section key="tags">Tags</section>
+      <section key="images">Images</section>
+    </iron-pages>
+
   </template>
 
   <script>
@@ -23,11 +58,12 @@ Element to facilitate the editing of products on the Ordercloud platform
       is: 'oc-product-edit',
 
       properties: {
-        prop1: {
+        loading: Boolean,
+        selected: {
           type: String,
-          value: 'oc-product-edit',
-        },
-      },
+          notify: true
+        }
+      }
 
     });
   </script>
